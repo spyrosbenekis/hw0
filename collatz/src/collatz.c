@@ -1,17 +1,15 @@
 #include <stdio.h>
 
-int collatz(int num);
+int collatz(long int num);
 
 int main()
 {
     int st,fn;
-    int max,path;
+    int max=0,path;
 
     scanf("%d %d",&st,&fn);
 
-    if(st<=0 || fn<=0 || fn>100000000)
-        return 0;
-    else
+    if(st>0 && fn>0 && fn<=100000000)
     {
         max=collatz(st);
 
@@ -28,7 +26,7 @@ int main()
 }
 
 
-int collatz(int num)
+int collatz(long int num)
 {
     int count=1;
 
