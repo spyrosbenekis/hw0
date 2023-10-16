@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int collatz(long int num);
+int collatz(long long int num);
 
 int main()
 {
@@ -26,7 +26,7 @@ int main()
 }
 
 
-int collatz(long int num)
+int collatz(long long int num)
 {
     int count=1;
 
