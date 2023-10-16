@@ -18,7 +18,7 @@ int main()
             path=collatz(i);
 
             if(max<path)
-	         max=path;
+                 max=path;
         }
     }
 
@@ -30,9 +30,6 @@ int collatz(long long int num)
 {
     int count=1;
 
-    if(num == 1)
-        count=1;
-
     while(num > 1)
     {
         if(num % 2 == 0)
@@ -40,10 +37,7 @@ int collatz(long long int num)
         else
             num = (num * 3) + 1;
 
-        if(num == 1)
-            count++;
-        else
-            count++;
+        count++;
     }
 
     return count;
