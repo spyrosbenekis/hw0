@@ -23,7 +23,6 @@ int main(int argc, char **argv)
     for (int i = st; i <= fn; i++) {
         num = i;
         count = 0;
-
         while (num > 1) {
 	    //Elegxos an exei hdh ypologistei
             if (num <= fn && results[num] != 0) {
