@@ -1,44 +1,53 @@
 #include <stdio.h>
+#include <stdlib.h>
 
-int collatz(long long int num);
-
-int main()
+int main(int argc, char **argv)
 {
-    int st,fn;
-    int max=0,path;
+    if (argc != 3) {
+        printf("Program needs to be called as `./prog final_exam homework lab`\n");
+        return 1;
+    }
+    //Dilwsi metavlitwn
+    int st = atoi(argv[1]);
+    int fn = atoi(argv[2]);
+    int max = 0, count;
+    long long int num;
+    //Elegxos egkirotitas
+    if (st <= 0 || fn > 100000000) {
+        printf("0");
+        return 1;
+    }
+    //Dynamiki desmeusi mnimis gia apothikeusi apotelesmatwn
+    int *results = (int *)malloc((fn-st+ 1) * sizeof(int));
 
-    scanf("%d %d",&st,&fn);
+    for (int i = st; i <= fn; i++) {
+        num = i;
+        count = 0;
 
-    if(st>0 && fn>0 && fn<=100000000)
-    {
-        max=collatz(st);
-
-        for(int i=st+1; i<=fn; i++)
-        {
-            path=collatz(i);
-
-            if(max<path)
-                 max=path;
+        while (num > 1) {
+	    //Elegxos an exei hdh ypologistei
+            if (num <= fn && results[num] != 0) {
+                count += results[num];
+                break;
+            }
+	    //Collatz
+            count++;
+            if (num % 2 == 0)
+                num = num / 2;
+            else {
+                count++;
+                num = (num * 3 + 1) / 2;
+            }
         }
+        results[i] = count;//kataxwrisi apotelesmatos
+
+        if (count > max)
+            max = count;
     }
+    //Ektypwsi apotelesmatos
+    printf("%d\n", max+1);
+    //Apodesmeusi mnimis
+    free(results);
 
-    printf("%d\n",max);
-}
-
-
-int collatz(long long int num)
-{
-    int count=1;
-
-    while(num > 1)
-    {
-        if(num % 2 == 0)
-            num = num / 2;
-        else
-            num = (num * 3) + 1;
-
-        count++;
-    }
-
-    return count;
+    return 0;
 }
