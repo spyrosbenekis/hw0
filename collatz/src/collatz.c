@@ -14,7 +14,7 @@ int main(int argc, char **argv)
     long long int num;
     //Elegxos egkirotitas
     if (st <= 0 || fn > 100000000){
-        printf("0");
+        printf("0\n");
 	return 0;
     }
     //Dynamiki desmeusi mnimis gia apothikeusi apotelesmatwn
