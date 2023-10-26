@@ -15,7 +15,6 @@ int main(int argc, char **argv)
     //Elegxos egkirotitas
     if (st <= 0 || fn > 100000000) {
         printf("0");
-        return 1;
     }
     //Dynamiki desmeusi mnimis gia apothikeusi apotelesmatwn
     int *results = (int *)malloc((fn-st+ 1) * sizeof(int));
