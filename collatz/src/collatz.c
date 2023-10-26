@@ -13,11 +13,12 @@ int main(int argc, char **argv)
     int max = 0, count;
     long long int num;
     //Elegxos egkirotitas
-    if (st <= 0 || fn > 100000000) {
+    if (st <= 0 || fn > 100000000){
         printf("0");
+	return 0;
     }
     //Dynamiki desmeusi mnimis gia apothikeusi apotelesmatwn
-    int *results = (int *)malloc((fn-st+ 1) * sizeof(int));
+    int *results = (int *)malloc((fn+1) * sizeof(int));
 
     for (int i = st; i <= fn; i++) {
         num = i;
@@ -50,3 +51,19 @@ int main(int argc, char **argv)
 
     return 0;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
