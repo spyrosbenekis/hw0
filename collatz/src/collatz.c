@@ -30,13 +30,8 @@ int main(int argc, char **argv)
                 break;
             }
 	    //Collatz
+            num = (num % 2 == 0) ? num / 2 : 3 * num + 1;
             count++;
-            if (num % 2 == 0)
-                num = num / 2;
-            else {
-                count++;
-                num = (num * 3 + 1) / 2;
-            }
         }
         results[i] = count;//kataxwrisi apotelesmatos
 
@@ -50,19 +45,3 @@ int main(int argc, char **argv)
 
     return 0;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
