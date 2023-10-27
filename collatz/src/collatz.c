@@ -18,7 +18,7 @@ int main(int argc, char **argv)
 	return 0;
     }
     //Dynamiki desmeusi mnimis gia apothikeusi apotelesmatwn
-    int *results = (int *)malloc((fn+1) * sizeof(int));
+    int *results = (int *)calloc((fn+1), sizeof(int));
 
     for (int i = st; i <= fn; i++) {
         num = i;
