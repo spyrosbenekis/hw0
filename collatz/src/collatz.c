@@ -12,7 +12,7 @@ int main(int argc, char **argv)
     int fn = atoi(argv[2]);
     int max = 0, count;
     long long int num;
-    //Elegxos egkirotitas
+    //Elegxos egkirotitas timwn
     if (st <= 0 || fn > 100000000){
         printf("0\n");
 	    return 0;
@@ -44,7 +44,7 @@ int main(int argc, char **argv)
             max = count;
     }
     //Ektypwsi apotelesmatos
-    printf("%d\n", max+1);
+    printf("%d\n",max+1);
 
     return 0;
 }
