@@ -30,7 +30,12 @@ int main(int argc, char **argv)
                 break;
             }
 	    //Collatz
-            num = (num % 2 == 0) ? num / 2 : 3 * num + 1;
+            if(num%2==0)
+		num>>=1;//Olisthisi pros ta aristera
+	    else{
+		num=(3*num+1)>>1;//Olisthisi pros ta aristera
+		count++;
+	    }
             count++;
         }
         results[i] = count;//kataxwrisi apotelesmatos
@@ -40,9 +45,6 @@ int main(int argc, char **argv)
     }
     //Ektypwsi apotelesmatos
     printf("%d\n", max+1);
-    //Apodesmeusi mnimis
-    
-    //free(results);
 
     return 0;
 }
