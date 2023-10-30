@@ -15,7 +15,7 @@ int main(int argc, char **argv)
     //Elegxos egkirotitas
     if (st <= 0 || fn > 100000000){
         printf("0\n");
-	return 0;
+	    return 0;
     }
     //Dynamiki desmeusi mnimis gia apothikeusi apotelesmatwn
     int *results = (int *)malloc((fn+1) * sizeof(int));
@@ -24,18 +24,18 @@ int main(int argc, char **argv)
         num = i;
         count = 0;
         while (num > 1) {
-	    //Elegxos an exei hdh ypologistei
-            if (num <= fn && results[num] != 0) {
+	        //Elegxos an exei hdh ypologistei
+            if (num < i && num > st) {
                 count += results[num];
                 break;
             }
-	    //Collatz
+	        //Collatz
             if(num%2==0)
-		num>>=1;//Olisthisi pros ta aristera
-	    else{
-		num=(3*num+1)>>1;//Olisthisi pros ta aristera
-		count++;
-	    }
+		        num>>=1;//Olisthisi pros ta aristera
+	        else{
+		        num=(3*num+1)>>1;//Olisthisi pros ta aristera
+		        count++;
+	        }
             count++;
         }
         results[i] = count;//kataxwrisi apotelesmatos
