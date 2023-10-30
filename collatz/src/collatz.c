@@ -24,18 +24,18 @@ int main(int argc, char **argv)
         num = i;
         count = 0;
         while (num > 1) {
-	        //Elegxos an exei hdh ypologistei
+	    //Elegxos an exei hdh ypologistei
             if (num < i && num > st) {
                 count += results[num];
                 break;
             }
-	        //Collatz
+	    //Collatz
             if(num%2==0)
-		        num>>=1;//Olisthisi pros ta aristera
-	        else{
-		        num=(3*num+1)>>1;//Olisthisi pros ta aristera
-		        count++;
-	        }
+	        num>>=1;//Olisthisi pros ta aristera
+	    else{
+	        num=(3*num+1)>>1;//Olisthisi pros ta aristera
+	        count++;
+	    }
             count++;
         }
         results[i] = count;//kataxwrisi apotelesmatos
