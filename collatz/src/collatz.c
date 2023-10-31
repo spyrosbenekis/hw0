@@ -18,24 +18,24 @@ int main(int argc, char **argv)
 	    return 0;
     }
     //Dynamiki desmeusi mnimis gia apothikeusi apotelesmatwn
-    int *results = (int *)malloc((fn+1) * sizeof(int));
+    int *results = (int *)calloc((fn+1), sizeof(int));
 
     for (int i = st; i <= fn; i++) {
         num = i;
         count = 0;
         while (num > 1) {
-	    //Elegxos an exei hdh ypologistei
-            if (num < i && num > st) {
+	        //Elegxos an exei hdh ypologistei
+            if (num<i && results[num]!=0) {
                 count += results[num];
                 break;
             }
-	    //Collatz
+	        //Collatz
             if(num%2==0)
-	        num>>=1;//Olisthisi pros ta aristera
-	    else{
-	        num=(3*num+1)>>1;//Olisthisi pros ta aristera
-	        count++;
-	    }
+	            num>>=1;//Olisthisi pros ta aristera
+	        else{
+	            num=(3*num+1)>>1;//Olisthisi pros ta aristera
+	            count++;
+	        }
             count++;
         }
         results[i] = count;//kataxwrisi apotelesmatos
