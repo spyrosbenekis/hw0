@@ -4,7 +4,7 @@
 int main(int argc, char **argv)
 {
     if (argc != 3) {
-        printf("Program needs to be called as `./prog final_exam homework lab`\n");
+        printf("Program needs to be called as `./collatz num1 num2`\n");
         return 1;
     }
     //Dilwsi metavlitwn
