@@ -4,8 +4,8 @@
 int main(int argc, char **argv)
 {
     if (argc != 3) {
-        printf("Program needs to be called as `./collatz num1 num2`\n");
-        return 1;
+        printf("0\n");
+  	    return 1;
     }
     //Dilwsi metavlitwn
     int st = atoi(argv[1]);
@@ -15,7 +15,7 @@ int main(int argc, char **argv)
     //Elegxos egkirotitas timwn
     if (st <= 0 || fn > 100000000){
         printf("0\n");
-  	return 0;
+  	    return 1;
     }
     //Dynamiki desmeusi mnimis gia apothikeusi apotelesmatwn
     int *results = (int *)calloc((fn+1), sizeof(int));
