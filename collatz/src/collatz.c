@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+int results[100000001];
+
 int main(int argc, char **argv)
 {
     if (argc != 3) {
@@ -11,21 +13,19 @@ int main(int argc, char **argv)
     int st = atoi(argv[1]);
     int fn = atoi(argv[2]);
     int max = 0, count;
-    long long int num;
+    register long long int num;
     //Elegxos egkirotitas timwn
     if (st <= 0 || fn > 100000000){
         printf("0\n");
   	    return 1;
     }
-    //Dynamiki desmeusi mnimis gia apothikeusi apotelesmatwn
-    int *results = (int *)calloc((fn+1), sizeof(int));
 
-    for (int i = st; i <= fn; i++) {
+    for (int i = 1; i <= fn; i++) {
         num = i;
         count = 0;
         while (num > 1) {
 	        //Elegxos an exei hdh ypologistei
-            if (num<i && results[num]!=0) {
+            if (num<i) {
                 count += results[num];
                 break;
             }
@@ -33,7 +33,7 @@ int main(int argc, char **argv)
             if(num%2==0)
 	            num>>=1;//Olisthisi pros ta aristera
 	        else{
-	            num=(3*num+1)>>1;//Olisthisi pros ta aristera
+	            num +=(num+1)>>1;//Olisthisi pros ta aristera
 	            count++;
 	        }
             count++;
