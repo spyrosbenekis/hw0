@@ -33,7 +33,7 @@ int main(int argc, char **argv)
             if(num%2==0)
 	            num>>=1;//Olisthisi pros ta aristera
 	        else{
-	            num +=(num+1)>>1;//Olisthisi pros ta aristera
+	            num +=num+1>>1;//Olisthisi pros ta aristera
 	            count++;
 	        }
             count++;
