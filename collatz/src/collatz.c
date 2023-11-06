@@ -28,19 +28,19 @@ int main(int argc, char **argv)
         num = i;
         count = 0;
         while (num > 2) {
-	        //Elegxos an exei hdh ypologistei
+	    //Elegxos an exei hdh ypologistei
             if (num<i) {
                 count += results[num];
                 break;
             }
-	        //Collatz
+	    //Collatz
             if(num%2==0)
-	            num>>=1;//Olisthisi pros ta aristera
-	        else{
-	            num=(3*num+1)>>1;//Olisthisi pros ta aristera
-	            count++;
-	        }
-            count++;
+	        num>>=1;//Olisthisi pros ta aristera
+	    else{
+	        num=(3*num+1)>>1;//Olisthisi pros ta aristera
+	        count++;
+	    }
+	    count++;
         }
 
         results[i] = count;//kataxwrisi apotelesmatos
@@ -48,6 +48,7 @@ int main(int argc, char **argv)
         if (count > max)
             max = count;
     }
+	
     //Ektypwsi apotelesmatos
     printf("%d\n",max);
     return 0;
