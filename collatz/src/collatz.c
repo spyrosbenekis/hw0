@@ -6,7 +6,7 @@ int results[100000001];
 int main(int argc, char **argv)
 {
     if (argc != 3) {
-        printf("Program needs to be called as './collatz n1 n1'\n");
+        printf("0\n");
   	    return 1;
     }
     //Dilwsi metavlitwn
@@ -14,30 +14,35 @@ int main(int argc, char **argv)
     int fn = atoi(argv[2]);
     int max = 0, count;
     register long long int num;
+
     //Elegxos egkirotitas timwn
     if (st <= 0 || fn > 100000000){
         printf("0\n");
-  	return 1;
+  	    return 1;
     }
 
-    for (int i = 4; i <= fn; i++) {
+    results[1]=1;
+    results[2]=2;
+
+    for (int i = 1; i <= fn; i++) {
         num = i;
         count = 0;
-        while (num > 1) {
-	    //Elegxos an exei hdh ypologistei
+        while (num > 2) {
+	        //Elegxos an exei hdh ypologistei
             if (num<i) {
                 count += results[num];
                 break;
             }
-	    //Collatz
+	        //Collatz
             if(num%2==0)
-                num>>=1;//Olisthisi pros ta aristera
-            else{
-                num = (3*num+1)>>1;//Olisthisi pros ta aristera
-                count++;
-            }
+	            num>>=1;//Olisthisi pros ta aristera
+	        else{
+	            num=(3*num+1)>>1;//Olisthisi pros ta aristera
+	            count++;
+	        }
             count++;
         }
+
         results[i] = count;//kataxwrisi apotelesmatos
 
         if (count > max)
@@ -45,6 +50,5 @@ int main(int argc, char **argv)
     }
     //Ektypwsi apotelesmatos
     printf("%d\n",max);
-
     return 0;
 }
