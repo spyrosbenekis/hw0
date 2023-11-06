@@ -20,7 +20,7 @@ int main(int argc, char **argv)
   	    return 1;
     }
 
-    for (int i = 1; i <= fn; i++) {
+    for (int i = 2; i <= fn; i++) {
         num = i;
         count = 0;
         while (num > 1) {
