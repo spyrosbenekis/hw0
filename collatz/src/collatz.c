@@ -17,10 +17,10 @@ int main(int argc, char **argv)
     //Elegxos egkirotitas timwn
     if (st <= 0 || fn > 100000000){
         printf("0\n");
-  	    return 1;
+  	return 1;
     }
 
-    for (int i = 2; i <= fn; i++) {
+    for (int i = 4; i <= fn; i++) {
         num = i;
         count = 0;
         while (num > 1) {
@@ -31,11 +31,11 @@ int main(int argc, char **argv)
             }
 	    //Collatz
             if(num%2==0)
-	            num>>=1;//Olisthisi pros ta aristera
-	        else{
-	            num += (num+1)>>1;//Olisthisi pros ta aristera
-	            count++;
-	        }
+                num>>=1;//Olisthisi pros ta aristera
+            else{
+                num = (3*num+1)>>1;//Olisthisi pros ta aristera
+                count++;
+            }
             count++;
         }
         results[i] = count;//kataxwrisi apotelesmatos
@@ -44,7 +44,7 @@ int main(int argc, char **argv)
             max = count;
     }
     //Ektypwsi apotelesmatos
-    printf("%d\n",max+1);
+    printf("%d\n",max);
 
     return 0;
 }
