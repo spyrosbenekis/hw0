@@ -21,16 +21,13 @@ int main(int argc, char **argv)
   	    return 1;
     }
 
-    results[1]=1;
-    results[2]=2;
-
     for (int i = 1; i <= fn; i++) {
         num = i;
-        count = 0;
-        while (num > 2) {
+        count = 1;
+        while (num > 1) {
 	    //Elegxos an exei hdh ypologistei
             if (num<i) {
-                count += results[num];
+                count += results[num] - 1;
                 break;
             }
 	    //Collatz
@@ -42,14 +39,15 @@ int main(int argc, char **argv)
 	    }
 	    count++;
         }
-
+	
         results[i] = count;//kataxwrisi apotelesmatos
 
-        if (count > max)
+        if (i>=st && count > max)
             max = count;
     }
 	
     //Ektypwsi apotelesmatos
     printf("%d\n",max);
+
     return 0;
 }
