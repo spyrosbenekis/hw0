@@ -7,7 +7,7 @@ int main(int argc, char **argv)
 {
     if (argc != 3) {
         printf("0\n");
-  	    return 1;
+  	return 1;
     }
     //Dilwsi metavlitwn
     int st = atoi(argv[1]);
@@ -18,7 +18,7 @@ int main(int argc, char **argv)
     //Elegxos egkirotitas timwn
     if (st <= 0 || fn > 100000000){
         printf("0\n");
-  	    return 1;
+  	return 1;
     }
 
     for (int i = 1; i <= fn; i++) {
@@ -42,7 +42,7 @@ int main(int argc, char **argv)
 	
         results[i] = count;//kataxwrisi apotelesmatos
 
-        if (i>=st && count > max)
+        if (i>=st && count > max)//elegxos gia max 
             max = count;
     }
 	
